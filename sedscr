@@ -6,3 +6,5 @@ s/^$/.LP/
 s/^  *//
 # replaces any instance of any number of spaces with a single space
 s/  */ /g
+# places two spaces after every instance of a period that has spaces after it
+s/\.  */.  /g
