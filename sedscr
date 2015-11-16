@@ -11,5 +11,7 @@
 # 
 /^\.H1/{
 n
-/^$/d
+s/^$/foobar foobar foobar/
 }
+
+# line 14 originally /^$/d
