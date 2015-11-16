@@ -1,10 +1,15 @@
-# replaces empty lines with .LP symbol
-s/^$/.LP/
-# deletes lines that start with a + followed by any number of spaces
-/^+  */d
-# replaces spaces at the beginning of a line with nothing
-s/^  *//
-# replaces any instance of any number of spaces with a single space
-s/  */ /g
-# places two spaces after every instance of a period that has spaces after it
-s/\.  */.  /g
+# # replaces empty lines with .LP symbol
+# s/^$/.LP/
+# # deletes lines that start with a + followed by any number of spaces
+# /^+  */d
+# # replaces spaces at the beginning of a line with nothing
+# s/^  *//
+# # replaces any instance of any number of spaces with a single space
+# s/  */ /g
+# # places two spaces after every instance of a period that has spaces after it
+# s/\.  */.  /g
+# 
+/^\.H1/{
+n
+/^$/d
+}
