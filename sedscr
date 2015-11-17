@@ -9,9 +9,25 @@
 # # places two spaces after every instance of a period that has spaces after it
 # s/\.  */.  /g
 # 
-/^\.H1/{
-n
-s/^$/foobar foobar foobar/
+# Playing with n (next) command
+# /^\.H1/{
+# n
+# s/^$/foobar foobar foobar/
+# }
+# 
+/Northeast$/{
+	s///
+	w region.northeast
 }
-
-# line 14 originally /^$/d
+/Midwest$/{
+	s///
+	w region.midwest
+}
+/South$/{
+	s///
+	w region.south
+}
+/West$/{
+	s///
+	w region.west
+}
