@@ -1,0 +1,32 @@
+This is the ASCII file created for manipulation
+during the Emacs module of the Introduction to unix course.
+
+In this class you have learned many tools associated with the
+unix system.  You have learned how unix stores its files and how
+you can manipulate the locations and permissions of those files.
+You have also learned how to use another editor that will allow you
+to manipulate the contents of an ASCII text file on the Unix system.
+
+This file will be manipulated using the Emacs editor.
+Follow the directions in the emacs submit to know what
+changes to make to the file.  Append the contents of this file
+to the end of your assignment file for submission.
+This file was created by Jan Plane and will be submitted in its
+modified form.
+
+This paragraph won't eve appear in the final version of this
+file because the directions will tell you to delete the whole
+thing with one command.  Actually it would be a good idea to try
+it both ways - delete all of the lines one at a time and delete
+all of the lines with one command.  The command you use to do it
+in one command is the one that should be put into the commands
+list file.
+
+This paragraph will be copied and then pasted several places in
+the file.
+
+With this paragraph you will practice using blocks.
+The parts **between the stars** should be moved to after the stars.
+
+There may be some misspelled wrods in this documnt.  You will use the
+spell check feature of emacs to fix those.
