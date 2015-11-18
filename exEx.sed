@@ -3,9 +3,11 @@
 # 1,5w temp.out
 # Make a new file named 2.sed which has only lines 10, 12, and 14 from the original input file.
 # 
-10p;12p;4p;
+# 10p;12p;14p;
 # Make a new file named 3.sed which has only the lines that contain the word "line" from the original input file.
+# /line/p
 # Make a new file named 4.sed which has only the lines that contain a numeric character (0-9) from the original input file.
+
 # Make a new file named 5.sed which contains all of the lines from the original input file, but anytime the word "line" appears it should be exchanged with the word "entry". Also make sure that if "Line" appears it is replaced by "Entry".
 # Make a new file named 6.sed which contains all of the lines that do not contain a numeric character.
 # Make a new file named 7.sed which replaces any line with a numeric character with a line of three X's "XXX"
