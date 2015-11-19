@@ -1,0 +1,17 @@
+<para>
+
+This is a test paragraph in Interlead style ASCII. Another line
+in a paragraph. Yet another.
+
+<Figure Begin>
+
+v.111111111111111111111111111111000000000000000000000000001111
+11110011001100110011001100110011001100000000000000000000000000
+111111111
+
+<Figure Ends>
+
+<para>
+
+More lines of text to be found after the figure.
+These lines should print.
