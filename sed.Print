@@ -1,6 +1,16 @@
+# first one
+# /UNIX$/{
+# N
+# s/\nSystem/ Operating &/
+# P
+# D
+# }
+# 
+# second one
 /UNIX$/{
-N
-s/\nSystem/Operating &/
-P
-D
+	N
+	/\nSystem/{
+	s// Operating &/
+	D
+	}
 }
