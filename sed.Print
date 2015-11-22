@@ -35,3 +35,11 @@ s/@f1(\([^)]*\))/\\fB\1\\fR/g
 	P
 	D
 }
+# 
+# This one works and it doesn't used the NPD thing, but maybe it's not rebust enough...
+# s/@f1(\([^)]*\))/\\fB\1\\fR/g
+# /@f1([^)]*/{
+# 	N
+# 	s/@f1(\([^)]*\n[^)]*\))/\\fB\1\\fR/
+# 	s/@f1(\([^)]*\))/\\fB\1\\fR/g
+# }
