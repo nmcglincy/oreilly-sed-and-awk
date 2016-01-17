@@ -15,13 +15,14 @@
 # 	s/drives\navailable/drives not available/
 # }
 # 
-# s/Owner and Operator Guide/Installation Guide/
-# /Owner/{
+s/Owner and Operator Guide/Installation Guide/
+/Owner/{
+N
 # $!N
-# s/ *\n/ /
-# s/Owner and Operator Guide */Installation Guide\
-# /
-# }
+s/ *\n/ /
+s/Owner and Operator Guide */Installation Guide\
+/
+}
 # $!N protects you from trying to read lines beyond the last one, which will cause sed to quit.
 # Not necessary if you have the first substitute command.
 # 
