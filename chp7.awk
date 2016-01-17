@@ -31,7 +31,23 @@
 # 
 # phonelist.awk -- print name and phone number
 # input file -- name, company, street, city, state and zip, phone
-BEGIN { FS = "," }	# comma delimted fields
-
-{ print $1 ", " $6}
+# BEGIN { FS = "," }	# comma delimted fields
+#
+# { print $1 ", " $6}
+# 
+# Print blank lines
+# /^$/ {
+# 	++x
+# 	# print x
+# }
+# END { print x }
+# 
+# Averaging 5 grades
+# {	total = $2 + $3 + $4 + $5 + $6
+# 	avg = total/5
+# 	print $1, avg	}
+# 
+# {	total = $2 + $3 + $4 + $5 + $6
+# 	print $1, total/5	}
+# 
 
