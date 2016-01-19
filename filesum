@@ -1,17 +1,20 @@
 ls -l $* | awk '
 # filesum: list files and total size in bytes
 # input: long listing produced by "ls -l"
+# TODO - doesnt deal so well with long filenames
 
 #1 output column headers
 BEGIN {
-	print "BYTES", "\t", "FILE"
+	# print "FILE", "\t", "BYTES"
+	printf("%-15s\t%10s\n", "FILE", "BYTES")
 }
 
 #2 test for 9 fields; files begin with "-"
 NF == 9 && /^-/ {
 	sum += $5			# acculmulate size of file
 	++filenum			# count number of files
-	print $5, "\t", $9	# print size and filename
+	# print $5, "\t", $9	# print size and filename
+	printf("%-15s\t%10d\n", $9, $5)
 }
 
 #3 test for 9 fields, directory starts with "d"
@@ -26,6 +29,7 @@ $1 ~ /^\..*:$/ {
 
 #5 once all is done.
 END {
-	print "Total: ", sum, "bytes (" filenum " files)"
+	# print "Total: ", sum, "bytes (" filenum " files)"
+	printf("Total: %d bytes	(%d files)\n", sum, filenum)
 }'
 
