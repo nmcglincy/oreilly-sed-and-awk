@@ -50,9 +50,17 @@
 # END { print x }
 # 
 # Averaging 5 grades
-# {	total = $2 + $3 + $4 + $5 + $6
-# 	avg = total/5
-# 	print NR ".", $1, avg	}
+{
+	total = $2 + $3 + $4 + $5 + $6
+	avg = total/5
+	if ( avg >= 90 ) grade = "A"
+	else if ( avg >= 80 ) grade = "B"
+	else if ( avg >= 70 ) grade = "C"
+	else if ( avg >= 60 ) grade = "D"
+	else grade = "F"
+	result = (avg >= 65) ? "Pass" : "Fail"
+	print NR ".", $1, avg, grade, result
+}
 # 
 # {	total = $2 + $3 + $4 + $5 + $6
 # 	print $1, total/5	}
@@ -90,3 +98,4 @@
 # 	print $1, $2, $3
 # 	print balance += $3		# cheques have negative amounts
 # }
+# 
