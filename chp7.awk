@@ -76,17 +76,17 @@
 # 1st line: balance
 # check no.\twhat\texpense
 # 
-BEGIN {
-	FS = "\t"
-}
-#1 Expect the first record to have the starting balance
-NR == 1 {
-	print "Beginning balance: \t" $1
-	balance = $1
-	next
-}
-#2 Apply to each cheque record, adding amount from balance
-{
-	print $1, $2, $3
-	print balance += $3		# cheques have negative amounts
-}
+# BEGIN {
+# 	FS = "\t"
+# }
+# #1 Expect the first record to have the starting balance
+# NR == 1 {
+# 	print "Beginning balance: \t" $1
+# 	balance = $1
+# 	next
+# }
+# #2 Apply to each cheque record, adding amount from balance
+# {
+# 	print $1, $2, $3
+# 	print balance += $3		# cheques have negative amounts
+# }
