@@ -1,0 +1,29 @@
+# factorial, an awk driven bash script to derive factorials from the command line
+awk '
+BEGIN {
+	# prompt user; use printf, not print, to avoid the newline
+	printf("Enter number: ")
+}
+
+# Check that the user has entered a number
+$1 ~ /^[0-9]+$/ {
+	# assign value of $1 to number and fact
+	number = $1
+	if (number == 0)
+		fact = 1
+	else
+		fact = number
+	# loop to multiply fact*x until x=1
+	for (x = number -1; x > 1; x--)
+	# Im not sure why this is x-- and not --x, doesnt seem to make any difference to the toy examples in the text.
+		fact *= x
+	printf("The factorial of %d is %g\n", number, fact)
+	# exit -- saves user from typing CRTL-D
+	exit
+}
+
+# if not a number, prompt again.
+{
+	printf("\nInvalid entry. Enter a number: ")
+}'
+
