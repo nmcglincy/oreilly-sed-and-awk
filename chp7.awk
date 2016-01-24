@@ -106,6 +106,7 @@
 	for (i = 2; i <= NF; ++i)
 		total += $i
 	avg = total/(NF - 1)
+	student_avg[NR] = avg
 	if ( avg >= 90 ) grade = "A"
 	else if ( avg >= 80 ) grade = "B"
 	else if ( avg >= 70 ) grade = "C"
@@ -113,5 +114,22 @@
 	else grade = "F"
 	result = (avg >= 65) ? "Pass" : "Fail"
 	print NR ".", $1, avg, grade, result
+}
+
+END {
+	for (x = 1; x <= NR; x++)
+		class_avg_total += student_avg[x]
+	
+	class_average = class_avg_total/NR
+	
+	for (x = 1; x <= NR; x++)
+		if (student_avg[x] >= class_average)
+			++above_average
+		else
+			++below_average
+			
+	print "Class Average: ", class_average
+	print "At or Above Average: ", above_average
+	print "Below Average: ", below_average
 }
 
