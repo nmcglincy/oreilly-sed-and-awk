@@ -1,0 +1,27 @@
+awk '# awkro - expand acronyms
+# load acronyms into array "acro"
+FILENAME == "acronyms2.txt" {
+	split($0, entry, "\t")
+	acro[entry[1]] = entry[2]
+	next
+}
+
+# process any input line containing caps
+/[A-Z][A-Z]+/ {
+	# see if any field is an acronym
+	for (i = 1; i <= NF; i++)
+		if ($i in acro) {
+			# value to preserve uneditted $i
+			acronym = $i
+			# if it matches, add description
+			$i = acro[$i] " (" $i ")"
+			# only expand the acronym once
+			delete acro[acronym]
+		}
+}
+
+{
+	# print all lines
+	print $0
+}' acronyms2.txt $*
+
